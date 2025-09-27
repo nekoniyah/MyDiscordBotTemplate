@@ -1,5 +1,7 @@
-import { ChatInputCommandInteraction } from "discord.js";
+import { TypicalInteractionFn } from "../eventBuilder";
 
-export default async (interaction: ChatInputCommandInteraction) => {
-    await interaction.reply("Pong!");
+const ping: TypicalInteractionFn = async (interaction, { now }) => {
+    await interaction.reply(`:ping_pong: Pong! ${Date.now() - now}ms`);
 };
+
+export default ping;
