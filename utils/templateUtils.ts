@@ -1,12 +1,12 @@
 import { ChatInputCommandInteraction, type ClientEvents } from "discord.js";
 
 export default function eventBuilder<Name extends keyof ClientEvents>(
-    listener: (...event: ClientEvents[Name]) => void
+  listener: (...event: ClientEvents[Name]) => void,
 ) {
-    return listener;
+  return listener;
 }
 
 export type TypicalInteractionFn = (
-    interaction: ChatInputCommandInteraction,
-    { now }: { now: number }
+  interaction: ChatInputCommandInteraction,
+  { now }: { now: number },
 ) => void;
